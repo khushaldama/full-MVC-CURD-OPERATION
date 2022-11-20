@@ -1,0 +1,39 @@
+﻿@using full_curd_operation.Models
+@model List<curd>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>list</title>
+</head>
+<body>
+    <div> 
+        <table class="table" border="1">
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Address</td>
+                <td>Hobbies</td>
+                <td>Language</td>
+            </tr>
+            @foreach(curd e in Model)
+            {
+                <tr>
+                    <td>@e.Id</td>
+                    <td>@e.name</td>
+                    <td>@e.address</td>
+                    <td>@e.hobbies</td>
+                    <td>@e.language</td>
+                    <td>@Html.ActionLink("Update", "update", "Db", new {id=e.Id},null)</td>
+                    <td>@Html.ActionLink("Delete", "delete", "Db", new {id=e.Id},null)</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

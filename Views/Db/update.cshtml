@@ -1,0 +1,31 @@
+﻿@using full_curd_operation.Models
+@model curd
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>update</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("updatedata", "Db", FormMethod.Post))
+        {
+            <label>Enter Name:</label>
+            @Html.TextBoxFor(i => i.name);<br /><br />
+            <label>Enter Address:</label>
+            @Html.TextBoxFor(i => i.address);<br /><br />
+            <label>Enter Hobbies:</label>
+            @Html.TextBoxFor(i => i.hobbies);<br /><br />
+            <label>Enter Laguage:</label>
+            @Html.TextBoxFor(i => i.language);<br /><br />
+            @Html.HiddenFor(i => i.Id);
+            <input type="submit" value="update" />
+        }
+    </div>
+</body>
+</html>

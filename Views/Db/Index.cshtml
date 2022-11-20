@@ -1,0 +1,30 @@
+﻿@using full_curd_operation.Models
+@model curd
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("insert", "Db", FormMethod.Post))
+        {
+            <label>Enter Name:</label>
+            @Html.TextBoxFor(a => a.name);<br /><br />
+            <label>Enter Address:</label>
+            @Html.TextBoxFor(a => a.address);<br /><br />
+            <label>Enter Hobbies:</label>
+            @Html.TextBoxFor(a => a.hobbies);<br /><br />
+            <label>Enter Language:</label>
+            @Html.TextBoxFor(a => a.language);<br /><br />
+            <input type="submit" value="insert" />
+        }
+    </div>
+</body>
+</html>
